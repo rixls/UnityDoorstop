@@ -242,7 +242,7 @@ if [[ ! -d "$XMAKE_DIR" ]] || [[ ! -x "$xmake" ]]; then
     log-8601-local "Downloading xmake maybe..."
     sh "$TOOLS_DIR/xmake.run" --noexec --target "$XMAKE_BUILD_DIR"
     log-8601-local "Building xmake..."
-    if (cd "$XMAKE_BUILD_DIR" && $make build); then
+    if (cd "$XMAKE_BUILD_DIR" && ./configure && $make); then
         msg-success "Build successful"
     else
         msg-error "Failed to build xmake"
