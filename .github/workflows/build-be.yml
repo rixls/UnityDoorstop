@@ -47,7 +47,7 @@ jobs:
           path: artifacts/verbose
 
   build-linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
@@ -144,7 +144,7 @@ jobs:
           path: artifacts/debug
 
   collect:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: github.ref == 'refs/heads/master'
     needs:
       - build-windows
